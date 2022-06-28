@@ -1,0 +1,106 @@
+<main class="productos-detail" id="fullpage">
+	<nav class="container">
+		<div class="row">
+			<div class="col-6 text-right">
+				<div class="btn-all-product">
+					<a href="/productos">Ver todos nuestros productos</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="section">
+		<section class="slide-photo">
+			<div class="swiper-container" id="slider">
+				{% if product.ranges|length >= 1 %}
+					<div class="swiper-wrapper">
+						{% for range in product.ranges %}
+							<div class="swiper-slide">
+								<div class="floatImg">
+									<picture>
+										<img src="{{range.image[loop.index0][1]}}" alt="{{range.mass[loop.index0]}}">
+									</picture>
+								</div>
+								<p class="min-p">{{range.mass[loop.index0]}}</p>
+							</div>
+						{% endfor %}
+						<div>
+						{% endif %}
+					</div>
+				</div>
+				{# <div class="swiper-pagination d-flex justify-content-center align-items-center"></div> #}
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</section>
+			<section class="hero">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-10">
+							<div class="category-product">
+								<p class="l-text">{{ product.categoriename.name }}</p>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-10">
+								<div class="cabecera">
+									<h1 class="tituloH1b">{{product.name|raw}}</h1>
+									<p>{{product.description_detail}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="row justify-content-center">
+							<div class="col-10">
+								{% if product.ranges|length >= 1 %}
+									<p class="h5">Presentaciones</p>
+									<ul>
+										{% for range in product.ranges %}
+											<li>{{range.mass[loop.index0]}}</li>
+										{% endfor %}
+									</ul>
+								{% endif %}
+								<a class="btn secondary underline" href="/recetas-coronado/producto/{{product.url}}">Ver recetas</a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		{% if products|length >= 1 %}
+	<section class="section fp-auto-height">
+		<div class="recipe--related productos-grid">
+			<h3 class="tituloH1">Otros productos</h3>
+			<div class="grid">
+				<div class="container grid--wrap">
+					<div class="row justify-content-center align-items-center">
+						<div class="col-9">
+							<div class="grid--wrap__card">
+							{% for item in products %}
+								{% for i in 0..4 %}
+									<a class="card" href="/productos/{{item.product_type_url}}/{{ item.url }}">
+										<div class="card-body">
+											<div class="photo-grid">
+												<picture>
+													<img src="{{ item.image_preview }}" alt="{{ item.name }}">
+												</picture>
+											</div>
+											<div class="card-topics">
+
+													<h4>{{ item.name }}</h4>
+													<p>{{ item.description_preview }}</p>
+
+											</div>
+										</div>
+									</a>
+								{% endfor %}
+							{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}
+	</main>

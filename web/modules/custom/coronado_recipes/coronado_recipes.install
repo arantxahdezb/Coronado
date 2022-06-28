@@ -1,0 +1,129 @@
+<?php
+
+
+function coronado_recipes_schema()
+{
+  $schema['coronado_recipes'] = array(
+    'description' => 'The base table for coronado recipes.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Recipe ID',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'name' => array(
+        'description' => 'Recipe Name',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'description' => array(
+        'description' => 'Recipe description',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'image' => array(
+        'description' => 'Recipe image',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'image_preview' => array(
+        'description' => 'Recipe image preview',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'video_link' => array(
+        'description' => 'Recipe video link',
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'product' => array(
+        'description' => 'Recipe product',
+        'type' => 'varchar',
+        'length' => 250,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'PDF' => array(
+        'description' => 'Recipe PDF',
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'level' => array(
+        'description' => 'Recipe level',
+        'type' => 'varchar',
+        'length' => 250,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'temporality' => array(
+        'description' => 'Recipe temporality',
+        'type' => 'text',
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'time' => array(
+        'description' => 'Recipe time',
+        'type' => 'varchar',
+        'length' => 250,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'steps' => array(
+        'description' => 'Recipe steps',
+        'type' => 'text',
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'ingredients' => array(
+        'description' => 'Recipe ingredients',
+        'type' => 'text',
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'meta_title' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'meta_description' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'meta_keywords' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'url' => array(
+        'description' => 'Recipe URL',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'created_at' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'updated_at' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ]
+    ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}

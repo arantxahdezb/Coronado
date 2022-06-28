@@ -1,0 +1,22 @@
+coronado.how_we_work:
+  title: 'Como trabajamos'
+  description: 'Configure the section how we work.'
+  route_name: coronado.how_we_work_form
+  parent: system.admin_config_system
+
+coronado.about_us:
+  title: 'Quiénes Somos'
+  description: 'Configure the section about us.'
+  route_name: coronado.about_us_form
+  parent: system.admin_config_system
+
+coronado.config_coronado:
+  title: 'Legal'
+  description: 'Configure the legal'
+  route_name: coronado.config_coronado_form
+  parent: system.admin_config_system
+
+coronado.banners:
+  title: 'Hero Banners'
+  route_name: coronado.listBanner
+  parent: system.admin_content

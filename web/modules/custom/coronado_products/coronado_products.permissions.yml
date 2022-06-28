@@ -1,0 +1,23 @@
+coronado_products_add:
+  title: 'crear nuevos productos'
+  restrict access: true
+
+coronado_products_edit:
+  title: 'Editar productos'
+  restrict access: true
+
+coronado_products_delete:
+  title: 'Eliminar registro'
+  restrict access: true
+
+coronado_products_view:
+  title: 'Ver los productos'
+  restrict access: true
+
+coronado_producttype_edit:
+  title: 'Editar categorías de productos'
+  restrict access: true
+
+coronado_producttype_view:
+  title: 'Ver las categorías de productos'
+  restrict access: true

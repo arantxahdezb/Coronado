@@ -1,0 +1,4 @@
+coronado_recipes.Recipes:
+  title: 'Recetas'
+  route_name: coronado_recipes.listRecipe
+  parent: system.admin_content

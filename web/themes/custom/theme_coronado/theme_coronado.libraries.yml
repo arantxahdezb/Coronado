@@ -1,0 +1,32 @@
+style:
+  version: VERSION
+  css:
+    theme:
+      assets/css/theme_coronado.style.css: {}
+  js:
+    assets/js/theme_coronado.script.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+fullpage:
+  js:
+    https://coronado-com-mx-staging-assets.s3.amazonaws.com/s3fs-public/theme/src/js/fullpage.min.js: {}
+    https://coronado-com-mx-staging-assets.s3.amazonaws.com/s3fs-public/theme/src/js/jquery.fullpage.extensions.min.js: {}
+    https://coronado-com-mx-staging-assets.s3.amazonaws.com/s3fs-public/theme/src/js/swiper-bundle.min.js: {}
+    https://coronado-com-mx-staging-assets.s3.amazonaws.com/s3fs-public/theme/src/js/TweenMax.min.js: {}
+    https://coronado-com-mx-staging-assets.s3.amazonaws.com/s3fs-public/theme/src/js/modernizr.js: {}
+    https://coronado-com-mx-staging-assets.s3.amazonaws.com/s3fs-public/theme/src/js/ScrollMagic.min.js: {}
+    https://coronado-com-mx-staging-assets.s3.amazonaws.com/s3fs-public/theme/src/js/debug.addIndicators.min.js: {}
+    https://coronado-com-mx-staging-assets.s3.amazonaws.com/s3fs-public/theme/src/js/animation.gsap.min.js: {}
+  # css:
+  #   theme:
+  #     assets/css/fullpage.min.css: {}
+fonts:
+  # version: 3.0
+  css:
+    theme:
+      # '//fonts.googleapis.com/css?family=Roboto:100,300,500,700': {type: external} # external font
+      '//fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap': {type: external} 
+      # '//fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap': {type: external}
+      # fonts/poppins.css: {} # local font
+      https://coronado-com-mx-staging-assets.s3.amazonaws.com/s3fs-public/theme/fonts/acalling.css: {}

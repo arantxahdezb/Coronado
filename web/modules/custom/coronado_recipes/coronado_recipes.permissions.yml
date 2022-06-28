@@ -1,0 +1,15 @@
+coronado_recipes_add:
+  title: 'crear nuevas recetas'
+  restrict access: true
+
+coronado_recipes_edit:
+  title: 'Editar recetas'
+  restrict access: true
+
+coronado_recipes_delete:
+  title: 'Eliminar recetas'
+  restrict access: true
+
+coronado_recipes_view:
+  title: 'Ver las recetas'
+  restrict access: true

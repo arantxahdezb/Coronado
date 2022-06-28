@@ -1,0 +1,11 @@
+name: 'Website Speed'
+type: module
+description: 'Monitor the performance of the different pages in the website.'
+core_version_requirement: ^8 || ^9
+configure: website_speed.settings_form
+
+
+# Information added by Drupal.org packaging script on 2022-04-17
+version: '1.0.0'
+project: 'website_speed'
+datestamp: 1650219685

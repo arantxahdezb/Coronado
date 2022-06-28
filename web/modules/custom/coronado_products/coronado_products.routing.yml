@@ -1,0 +1,79 @@
+coronado_products.addProduct:
+  path: "/admin/content/product/add"
+  defaults:
+    _title: "Agregar Producto"
+    _form: '\Drupal\coronado_products\Form\addProduct'
+  requirements:
+    _permission: "coronado_products_add"
+
+coronado_products.editProduct:
+  path: "/admin/content/product/{arg}/edit"
+  defaults:
+    _title: "Editar producto"
+    _form: '\Drupal\coronado_products\Form\editProduct'
+  requirements:
+    _permission: "coronado_products_edit"
+
+coronado_products.deleteProduct:
+  path: "/admin/content/product/{arg}/delete"
+  defaults:
+    _title: "Eliminar producto"
+    _form: '\Drupal\coronado_products\Form\deleteProduct'
+  requirements:
+    _permission: "coronado_products_delete"
+
+coronado_products.listProduct:
+  path: "/admin/content/products"
+  defaults:
+    _controller: '\Drupal\coronado_products\Controller\coronado_productsController::listProduct'
+    _title: "Productos"
+  requirements:
+    _permission: "coronado_products_view"
+
+coronado_products.editProductType:
+  path: "/admin/content/product_type/{arg}/edit"
+  defaults:
+    _title: "Editar categoría de producto"
+    _form: '\Drupal\coronado_products\Form\editProductType'
+  requirements:
+    _permission: "coronado_producttype_edit"
+
+coronado_products.listProductType:
+  path: "/admin/content/product_types"
+  defaults:
+    _controller: '\Drupal\coronado_products\Controller\coronado_productsController::listProductType'
+    _title: "Categorías de producto"
+  requirements:
+    _permission: "coronado_producttype_view"
+
+coronado_products.categorie:
+  path: "/productos-coronado"
+  defaults:
+    _controller: '\Drupal\coronado_products\Controller\coronado_productsController::categorie'
+    _title: "Productos"
+  requirements:
+    _permission: 'access content'
+
+coronado_products.all_products:
+  path: "/productos"
+  defaults:
+    _controller: '\Drupal\coronado_products\Controller\coronado_productsController::all_products'
+    _title: "Productos"
+  requirements:
+    _permission: 'access content'
+
+coronado_products.products_categorie:
+  path: "/productos/{arg}"
+  defaults:
+    _controller: '\Drupal\coronado_products\Controller\coronado_productsController::products_categorie'
+    _title: "Productos"
+  requirements:
+    _permission: 'access content'
+
+coronado_products.product_detail:
+  path: "/productos/{arg}/{arg1}"
+  defaults:
+    _controller: '\Drupal\coronado_products\Controller\coronado_productsController::product_detail'
+    _title: "Productos"
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,264 @@
+<main class="recetas">
+	<section class="hero">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-5 align-self-start">
+					<h1 class="tituloH1a">Recetas</h1>
+					<p>Endulza tus días con CORONADO®. Prepara estas deliciosas recetas y comparte momentos dulces con quien tú quieras.</p>
+					<a class="btn primary" id="verRecetas" href="/recetas-coronado">Ver todas las recetas</a>
+				</div>
+			</div>
+		</div>
+		<div class="parallax-bg"></div>
+	</section>
+	<section class="recetas--filtro">
+		<div class="container">
+			<div class="row align-items-center justify-content-center">
+				<h2 class="titulos">¿Aún no sabes qué preparar?<br/> Te dejamos algunas ideas.</h2>
+				<div class="col-3">
+					<div class="icon" id="btn-ocasion">
+						<picture>
+							<source srcset="{{ bucket_url }}/theme/assets/img/recetas/temporalidad-icon-recetas@2x.webp" type="image/webp"><img src="{{ bucket_url }}/theme/assets/img/recetas/temporalidad-icon-recetas@2x.png" alt="Recetas Coronado®">
+						</picture>
+						<p>Ocasión</p>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="icon" id="btn-producto">
+						<picture>
+							<source srcset="{{ bucket_url }}/theme/assets/img/recetas/product-icon-recetas@2x.webp" type="image/webp"><img src="{{ bucket_url }}/theme/assets/img/recetas/product-icon-recetas@2x.png" alt="Recetas Coronado®">
+						</picture>
+						<p>Producto</p>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="icon" id="btn-tiempo">
+						<picture>
+							<source srcset="{{ bucket_url }}/theme/assets/img/recetas/time-icon-recetas@2x.webp" type="image/webp"><img src="{{ bucket_url }}/theme/assets/img/recetas/time-icon-recetas@2x.png" alt="Recetas Coronado®">
+						</picture>
+						<p>Tiempo</p>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="icon" id="btn-nivel">
+						<picture>
+							<source srcset="{{ bucket_url }}/theme/assets/img/recetas/habilidad-icon-recetas@2x.webp" type="image/webp"><img src="{{ bucket_url }}/theme/assets/img/recetas/habilidad-icon-recetas@2x.png" alt="Recetas Coronado®">
+						</picture>
+						<p>Habilidad</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+
+{# MODALES #}
+
+<div class="modal fade" id="modal-ocasion" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close"><img class="img-fluid" src="{{ bucket_url }}/theme/assets/img/modal/close.svg" alt=""></button>
+			</div>
+			<div class="modal-body">
+				<div class="container">
+					<div class="row justify-content-center align-items-center">
+						<div
+							class="col-md-9">
+
+							{# BEGIN CONTENT #}
+
+							<h4 class="h-red">¿Cocinarás para una ocasión especial?</h4>
+							<p class="p-red">Selecciónala:</p>
+							<div class="row justify-content-center">
+								<div class="col-9 text-center">
+									<div class="input">
+										<div class="select-style">
+											<select id="recipe-ocasion">
+												{% for temporality in filters.temporalitys %}
+													<option id="ocasion{{loop.index0}}" value="{{temporality.url}}">{{temporality.name}}</option>
+												{% endfor %}
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							{# END CONTENT #}
+
+							<div class="nav-quiz">
+								<div class="btn secondary" id="last-button-ocasion">
+									<p class="h3">Ver recetas</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{# PRODUCTO MODAL #}
+<div class="modal fade" id="modal-producto" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close"><img class="img-fluid" src="{{ bucket_url }}/theme/assets/img/modal/close.svg" alt=""></button>
+			</div>
+			<div class="modal-body">
+				<div class="container">
+					<div class="row justify-content-center align-items-center">
+						<div
+							class="col-md-9">
+
+							{# BEGIN CONTENT #}
+
+							<h4 class="h-red">¿Cuál es tu producto CORONADO<sup>®</sup> favorito?</p>
+							<p class="p-red">Elígelo:</p>
+							<div class="row justify-content-center">
+								<div class="col-9 text-center">
+									<div class="input">
+										<div class="select-style">
+											<select id="recipe-product">
+												{% for product in filters.products %}
+													<option id="producto{{loop.index0}}" value="{{product.url}}">{{product.name}}</option>
+												{% endfor %}
+											</select>
+
+										</div>
+									</div>
+								</div>
+							</div>
+
+							{# END CONTENT #}
+
+							<div class="nav-quiz">
+								<div class="btn secondary" id="last-button-producto">
+									<p class="h3">Ver recetas</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{# TIEMPO MODAL #}
+<div class="modal fade" id="modal-tiempo" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close"><img class="img-fluid" src="{{ bucket_url }}/theme/assets/img/modal/close.svg" alt=""></button>
+			</div>
+			<div class="modal-body">
+				<div class="container">
+					<div class="row justify-content-center align-items-center">
+						<div
+							class="col-md-9">
+
+							{# BEGIN CONTENT #}
+
+							<h4 class="h-red">¿Cuánto tiempo quieres dedicarle a la cocina?</p>
+							<p class="p-red">Tiempo de preparación</p>
+							<div class="row justify-content-center">
+								<div id="time-machine" class="col-9 text-center">
+									<div class="d-flex">
+										<div class="input-btn">
+											<p>10 a 30 minutos</p>
+										</div>
+									</div>
+									<div class="d-flex">
+										<div class="input-btn">
+											<p>30 a 60 minutos</p>
+										</div>
+									</div>
+									<div class="d-flex">
+										<div class="input-btn">
+											<p>90 a 180 minutos</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							{# END CONTENT #}
+
+							<div class="nav-quiz">
+								<div class="btn secondary" id="last-button-tiempo">
+									<p class="h3">Ver recetas</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{# NIVEL MODAL #}
+<div class="modal fade" id="modal-nivel" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close"><img class="img-fluid" src="{{ bucket_url }}/theme/assets/img/modal/close.svg" alt=""></button>
+			</div>
+			<div class="modal-body">
+				<div class="container">
+					<div class="row justify-content-center align-items-center">
+						<div
+							class="col-md-9">
+
+							{# BEGIN CONTENT #}
+
+							<h4 class="h-red">¿Cuál es tu nivel de habilidad en la cocina?</p>
+							<p class="p-red">Selecciona uno:</p>
+							<div class="row justify-content-center align-items-center">
+								<div id="nivel-de-cocina" class="d-flex">
+									<div class="col-4">
+										<div id="principiante" class="icon">
+											<picture>
+												<source srcset="{{ bucket_url }}/theme/assets/img/modal/easy-level-icon@2x.webp" type="image/webp"><img src="{{ bucket_url }}/theme/assets/img/modal/easy-level-icon@2x.png" alt="Principiante">
+											</picture>
+											<p class="p-red">Principiante</p>
+										</div>
+									</div>
+									<div class="col-4">
+										<div id="casual" class="icon">
+											<picture>
+												<source srcset="{{ bucket_url }}/theme/assets/img/modal/medium-level-icon@2x.webp" type="image/webp"><img src="{{ bucket_url }}/theme/assets/img/modal/medium-level-icon@2x.png" alt="Casual">
+											</picture>
+											<p class="p-red">Casual</p>
+										</div>
+									</div>
+									<div class="col-4">
+										<div id="chef" class="icon">
+											<picture>
+												<source srcset="{{ bucket_url }}/theme/assets/img/modal/chef-level-icon@2x.webp" type="image/webp"><img src="{{ bucket_url }}/theme/assets/img/modal/chef-level-icon@2x.png" alt="Chef">
+											</picture>
+											<p class="p-red">Chef</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							{# END CONTENT #}
+
+							<div class="nav-quiz">
+								<div class="btn secondary" id="last-button-nivel">
+									<p class="h3">Ver recetas</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

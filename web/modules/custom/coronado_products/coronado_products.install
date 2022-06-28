@@ -1,0 +1,157 @@
+<?php
+
+
+function coronado_products_schema()
+{
+  $schema['coronado_product'] = array(
+    'description' => 'The base table for coronado products.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for a node.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'name' => array(
+        'description' => 'Product Name',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'description_preview' => array(
+        'description' => 'Product description preview',
+        'type' => 'varchar',
+        'length' => 160,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'description_detail' => array(
+        'description' => 'Product description detail',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'image_preview' => array(
+        'description' => 'Product image preview',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'ranges' => array(
+        'description' => 'Product ranges',
+        'type' => 'text',
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'code' => array(
+        'description' => 'Product e-commerce code',
+        'type' => 'varchar',
+        'length' => 50,
+      ),
+      'product_type_id' => array(
+        'description' => 'Product categorie',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'meta_title' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'meta_description' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'meta_keywords' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'url' => array(
+        'description' => 'Product URL',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'created_at' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'updated_at' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ]
+    ),
+    'primary key' => array('id'),
+  );
+
+  $schema['coronado_product_type'] = array(
+    'description' => 'The base table for coronado products.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Product type ID',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'name' => array(
+        'description' => 'Product type Name',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'image' => array(
+        'description' => 'Product type image',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'meta_title' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => ''
+      ),
+      'meta_description' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => ''
+      ),
+      'meta_keywords' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => ''
+      ),
+      'url' => array(
+        'description' => 'Product type URL',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'created_at' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'updated_at' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ]
+    ),
+    'primary key' => array('id'),
+  );
+
+  return $schema;
+}

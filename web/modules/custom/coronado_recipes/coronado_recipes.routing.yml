@@ -1,0 +1,81 @@
+coronado_recipes.addRecipe:
+  path: "/admin/content/recipe/add"
+  defaults:
+    _title: "Agregar receta"
+    _form: '\Drupal\coronado_recipes\Form\addRecipe'
+  requirements:
+    _permission: "coronado_recipes_add"
+
+coronado_recipes.editRecipe:
+  path: "/admin/content/recipe/{arg}/edit"
+  defaults:
+    _title: "Editar receta"
+    _form: '\Drupal\coronado_recipes\Form\editRecipe'
+  requirements:
+    _permission: "coronado_recipes_edit"
+
+coronado_recipes.deleteRecipe:
+  path: "/admin/content/recipe/{arg}/delete"
+  defaults:
+    _title: "Eliminar receta"
+    _form: '\Drupal\coronado_recipes\Form\deleteRecipe'
+  requirements:
+    _permission: "coronado_recipes_delete"
+
+coronado_recipes.listRecipe:
+  path: "/admin/content/recipes"
+  defaults:
+    _controller: '\Drupal\coronado_recipes\Controller\coronado_recipesController::listRecipes'
+    _title: "Recetas"
+  requirements:
+    _permission: "coronado_recipes_view"
+
+coronado_recipes.home:
+  path: "/recetas"
+  defaults:
+    _controller: '\Drupal\coronado_recipes\Controller\coronado_recipesController::home'
+    _title: "Recetas"
+  requirements:
+    _permission: 'access content'
+
+coronado_recipes.recipes:
+  path: "/recetas-coronado"
+  defaults:
+    _controller: '\Drupal\coronado_recipes\Controller\coronado_recipesController::recipes'
+    _title: "Recetas"
+  requirements:
+    _permission: 'access content'
+
+coronado_recipes.filter:
+  path: "/recetas-coronado/{arg}/{arg1}"
+  defaults:
+    _controller: '\Drupal\coronado_recipes\Controller\coronado_recipesController::filter'
+    _title: "Recetas"
+  requirements:
+    _permission: 'access content'
+
+coronado_recipes.recipe_detail:
+  path: "/recetas/{arg}"
+  defaults:
+    _controller: '\Drupal\coronado_recipes\Controller\coronado_recipesController::recipe_detail'
+    _title: "Recetas"
+  requirements:
+    _permission: 'access content'
+
+coronado_recipes.search:
+  path: "/busqueda"
+  defaults:
+    _controller: '\Drupal\coronado_recipes\Controller\SearchController::search'
+    _title: "Busqueda"
+  methods: [POST]
+  requirements:
+    _access: 'TRUE'
+
+coronado_recipes.profile:
+  path: "/perfilador"
+  defaults:
+    _controller: '\Drupal\coronado_recipes\Controller\SearchController::profile'
+    _title: "Perfilador"
+  methods: [POST]
+  requirements:
+    _access: 'TRUE'

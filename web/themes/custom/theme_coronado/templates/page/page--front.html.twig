@@ -1,0 +1,117 @@
+{#
+/**
+ * @file
+ * Template for the main page.
+ */
+#}
+<div class="page coronado">
+  {% embed '@radix/navbar/navbar.twig' with {
+    placement: 'sticky-top',
+    container: 'fixed',
+    color: 'light',
+    utility_classes: ['bg-menu-coronado'],
+  } %}
+
+    {% block branding %}
+      {% if page.navbar_branding %}
+        <div id="branding-menu">
+          {{ page.navbar_branding }}
+        </div>
+      {% endif %}
+    {% endblock %}
+
+    {% block left %}
+      {% if page.navbar_left %}
+        <div id="primary-menu">
+          {{ page.navbar_left }}
+        </div>
+      {% endif %}
+    {% endblock %}
+
+    {% block right %}
+      {% if page.navbar_right %}
+        <div id="secondary-menu">
+          {{ page.navbar_right }}
+        </div>
+      {% endif %}
+    {% endblock %}
+  {% endembed %}
+
+  <main id="fullpage" class="">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+    {% if page.header %}
+      <header class="page__header">
+        <div class="container">
+          {{ page.header }}
+        </div>
+      </header>
+    {% endif %}
+
+    {% if page.content %}
+      <div class="page__content">
+        <div class="container">
+          {{ page.content }}
+        </div>
+      </div>
+
+
+    {# SLIDER #}
+      <div class="hero_slider_region">
+        {{ page.hero_slider }}
+      </div>
+
+    {% endif %}
+
+
+
+  </main>
+
+  <div class="modal fade" id="search" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="close" data-dismiss="search" aria-label="Close"><img class="img-fluid" id="closeBtnV" src="https://coronado-com-mx-staging-assets.s3.amazonaws.com/s3fs-public/theme/assets/img/modal/close.svg" alt=""></div>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row justify-content-center align-items-center">
+              <div class="col-9">
+                <p class="tituloH1a">Buscador</p>
+                <p>Ingresa una palabra para buscar una deliciosa receta:</p>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-12">
+                <div class="input">
+                <form action = "/busqueda" method = "post">
+                  <input class="input__field" id="keys" type="search" name="keys" placeholder="Buscador de Recetas Coronado®" onblur="this.placeholder = 'Buscador de Recetas Coronado®'" onfocus="this.placeholder=''">
+                  <label class="input__label" for="search"><span class="input__label-content">Buscador de Recetas Coronado®</span></label>
+                  <button id="btn_search"><img class="img-fluid" id="searchBtn" src="https://coronado-com-mx-staging-assets.s3.amazonaws.com/s3fs-public/theme/assets/img/generals/search-icon.svg" alt="Búsqueda"></button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page__footer">
+    {% block footer %}
+      <div class="container">
+        {% if page.footer_first or page.footer_second or page.footer_third %}
+          <div class="d-flex justify-content-md-between align-items-md-center">
+            <div id="sociallinks">
+                {{ page.footer_first }}
+            </div>
+            {{ page.footer_second }}
+            {{ page.footer_third }}
+          </div>
+        {% endif %}
+      </div>
+    {% endblock %}
+  </footer>
+
+</div>

@@ -1,0 +1,109 @@
+coronado.config_coronado_form:
+  path: "/admin/config/coronado/settings"
+  defaults:
+    _form: '\Drupal\coronado\Form\ConfigCoronadoForm'
+    _title: "Configuraciones Generales Coronado"
+  requirements:
+    _permission: "coronado_legal"
+  options:
+    _admin_route: TRUE
+
+coronado.about_us_form:
+  path: "/admin/config/coronado/about_us"
+  defaults:
+    _form: '\Drupal\coronado\Form\about_usForm'
+    _title: "Configuración Quienes Somos"
+  requirements:
+    _permission: "coronado_about_us"
+  options:
+    _admin_route: TRUE
+
+coronado.how_we_work_form:
+  path: "/admin/config/coronado/how_we_work"
+  defaults:
+    _form: '\Drupal\coronado\Form\how_we_workForm'
+    _title: "Configuración Como Trabajamos"
+  requirements:
+    _permission: "coronado_how_we_work"
+  options:
+    _admin_route: TRUE
+
+coronado.addBanner:
+  path: "/admin/content/home/add"
+  defaults:
+    _title: "Agregar banner"
+    _form: '\Drupal\coronado\Form\addBanner'
+  requirements:
+    _permission: "coronado_banners_add"
+
+coronado.editBanner:
+  path: "/admin/content/home/{arg}/edit"
+  defaults:
+    _title: "Editar banner"
+    _form: '\Drupal\coronado\Form\editBanner'
+  requirements:
+    _permission: "coronado_banners_edit"
+
+coronado.deleteBanner:
+  path: "/admin/content/home/{arg}/delete"
+  defaults:
+    _title: "Eliminar Banner"
+    _form: '\Drupal\coronado\Form\deleteBanner'
+  requirements:
+    _permission: "coronado_banners_delete"
+
+coronado.listBanner:
+  path: "/admin/content/banners_home"
+  defaults:
+    _controller: '\Drupal\coronado\Controller\coronadoController::listBanners'
+    _title: "Banners"
+  requirements:
+    _permission: "coronado_banners_view"
+
+coronado.banners:
+  path: "/home"
+  defaults:
+    _controller: '\Drupal\coronado\Controller\coronadoController::banners'
+    _title: "Home "
+  requirements:
+    _permission: 'access content'
+
+coronado.not_found:
+  path: '/404-not-found'
+  defaults:
+    _controller: '\Drupal\coronado\Controller\coronadoController::notFound'
+    _title: '404'
+  requirements:
+    _permission: 'access content'
+
+coronado.forbidden:
+  path: '/403-forbidden'
+  defaults:
+    _controller: '\Drupal\coronado\Controller\coronadoController::accessForbidden'
+    _title: '403'
+  requirements:
+    _permission: 'access content'
+
+# coronado.about_us:
+#   path: "/quienes-somos"
+#   defaults:
+#     _controller: '\Drupal\coronado\Controller\coronadoController::about_us'
+#     _title: "Quiénes Somos"
+#   requirements:
+#     _permission: 'access content'
+
+coronado.how_we_work:
+  path: "/como-trabajamos"
+  defaults:
+    _controller: '\Drupal\coronado\Controller\coronadoController::how_we_work'
+    _title: "Cómo trabajamos"
+  requirements:
+    _permission: 'access content'
+
+coronado.notice_of_privacy:
+  path: "/aviso-de-privacidad"
+  defaults:
+    _controller: '\Drupal\coronado\Controller\coronadoController::notice_of_privacy'
+    _title: "Aviso de privacidad"
+  requirements:
+    _permission: 'access content'

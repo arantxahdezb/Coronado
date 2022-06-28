@@ -1,0 +1,183 @@
+<main class="home" id="fullpage">
+	<div class="banner-top">
+		<div class="row justify-content-end align-items-center">
+			<div class="col-8">
+				<h1>¿Ya sabes qué preparar hoy, o necesitas inspiración?</h1>
+			</div>
+		</div>
+		<div class="row justify-content-end align-items-center">
+			<div class="col-6">
+				<div id="descubreBtn">
+					<picture>
+						<source srcset="{{ bucket_url }}/theme/assets/img/home/descubre-aqui@2x.webp" type="image/webp"><img src="{{ bucket_url }}/theme/assets/img/home/descubre-aqui@2x.png" alt="Home - Nav">
+					</picture>
+					<h2 class="btn terciary" data-toggle="modal" data-target="#modal">Tu receta perfecta</h2>
+				</div>
+				<div class="floatImg">
+					<picture>
+						<img src="{{ bucket_url }}/theme/assets/img/home/hand.svg" alt="Home - Descubre"></picture>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% if banners|length >= 1 %}
+		<section class="section hero">
+			<div class="swiper-container" id="sliderHome">
+				<div class="swiper-wrapper">
+					{% for banner in banners %}
+						<div class="swiper-slide" id="home{{loop.index0}}" data-hash="recetas">
+							{% if banner.video_link is not empty %}
+								<div class="video-btn" onclick="jQuery('#splashVideo{{loop.index0}}').modal('show')"></div>
+							{% endif %}
+							<picture>
+								<img class="BannerDesktop" src="{{ banner.image_desktop }}" alt="Home - Nav">
+								<img class="BannerMobile" src="{{ banner.image_mobile }}" alt="Home - Nav">
+							</picture>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+		</section>
+	{% endif %}
+</main>
+
+<div class="modal fade" id="modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close"><img class="img-fluid" id="closeBtn" src="{{ bucket_url }}/theme/assets/img/modal/close.svg" alt=""></button>
+			</div>
+			<div class="modal-body">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-md-12">
+							<div class="swiper-container" id="slider-receta">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<h4>Empecemos</h4>
+										<p class="h5">Contesta las preguntas para descubrir tu receta perfecta.</p>
+										<div class="row justify-content-center">
+
+											<div class="col-6">
+												<div class="icon">
+													<picture>
+														<source srcset="{{ bucket_url }}/theme/assets/img/recetas/time-icon-recetas@2x.webp" type="image/webp"><img src="{{ bucket_url }}/theme/assets/img/recetas/time-icon-recetas@2x.png" alt="Recetas Coronado®">
+													</picture>
+													<p>Tiempo</p>
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="icon">
+													<picture>
+														<source srcset="{{ bucket_url }}/theme/assets/img/recetas/habilidad-icon-recetas@2x.webp" type="image/webp"><img src="{{ bucket_url }}/theme/assets/img/recetas/habilidad-icon-recetas@2x.png" alt="Recetas Coronado®">
+													</picture>
+													<p>Habilidad</p>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="swiper-slide">
+										<ul class="breadcrumb">
+											<li class="active">1</li>
+											<li>2</li>
+
+										</ul>
+										<p class="h5">¿Cuánto tiempo quieres dedicarle a la cocina?</p>
+										<p class="h4">Tiempo de preparación</p>
+										<div class="row justify-content-center">
+											<div id="time-machine" class="col-9 text-center">
+												<div class="d-flex">
+													<div class="input-btn">
+														<p>10 a 30 minutos</p>
+													</div>
+												</div>
+												<div class="d-flex">
+													<div class="input-btn">
+														<p>30 a 60 minutos</p>
+													</div>
+												</div>
+												<div class="d-flex">
+													<div class="input-btn">
+														<p>90 a 180 minutos</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<ul class="breadcrumb">
+											<li>1</li>
+											<li class="active">2</li>
+											
+										</ul>
+										<p class="h5">¿Cuál es tu nivel de habilidad en la cocina?</p>
+										<p class="h4">Selecciona uno:</p>
+										<div class="row justify-content-center align-items-center">
+											<div id="nivel-de-cocina" class="d-flex">
+												<div class="col-4">
+													<div id="principiante" class="icon">
+														<picture>
+															<source srcset="{{ bucket_url }}/theme/assets/img/modal/easy-level-icon@2x.webp" type="image/webp"><img src="{{ bucket_url }}/theme/assets/img/modal/easy-level-icon@2x.png" alt="Principiante">
+														</picture>
+														<p>Principiante</p>
+													</div>
+												</div>
+												<div class="col-4">
+													<div id="casual" class="icon">
+														<picture>
+															<source srcset="{{ bucket_url }}/theme/assets/img/modal/medium-level-icon@2x.webp" type="image/webp"><img src="{{ bucket_url }}/theme/assets/img/modal/medium-level-icon@2x.png" alt="Casual">
+														</picture>
+														<p>Casual</p>
+													</div>
+												</div>
+												<div class="col-4">
+													<div id="chef" class="icon">
+														<picture>
+															<source srcset="{{ bucket_url }}/theme/assets/img/modal/chef-level-icon@2x.webp" type="image/webp"><img src="{{ bucket_url }}/theme/assets/img/modal/chef-level-icon@2x.png" alt="Chef">
+														</picture>
+														<p>Chef</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="nav-quiz">
+								<div class="btn secondary" id="next-button">
+									<p class="h3">Siguiente</p>
+								</div>
+								<div class="d-none btn secondary" id="last-button">
+									<p class="h3">Ver recetas</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% if banners|length >= 1 %}
+	{% for banner in banners %}
+		{% if banner.video_link is not empty %}
+			<div class="modal fade" id="splashVideo{{ loop.index0 }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<div class="close" data-dismiss="modal" aria-label="Close"><img class="img-fluid" id="closeBtnV" src="{{ bucket_url }}/theme/assets/img/modal/close.svg" alt=""></div>
+						</div>
+						<div class="modal-body"></div>
+						<div class="embed-responsive embed-responsive-16by9">
+							<iframe class="embed-responsive-item" id="video" src="https://www.youtube.com/embed/{{banner.video_link}}" allowscriptaccess="always" allow="autoplay"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+{% endif %}

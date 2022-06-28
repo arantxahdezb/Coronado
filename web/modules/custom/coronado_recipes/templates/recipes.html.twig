@@ -1,0 +1,73 @@
+<main class="grid-recetas">
+	<section class="hero">
+		<h1 class="tituloH1">Recetas</h1>
+	</section>
+	<div class="grid">
+		<div class="container grid--wrap">
+			<div class="row">
+				<div class="col-12">
+					<div class="grid--wrap__card">
+						{% if recipes|length >= 1 %}
+							{% for recipe in recipes %}
+								<a class="card" href="/recetas/{{recipe.url}}">
+									<div class="card-body">
+										<div class="headline-photo">
+											<h2>{{recipe.name}}</h2>
+											<div class="photo-grid">
+												<picture>
+													<img id="receta-{{ recipe.url }}" src="{{ recipe.image_preview }}" alt="{{ recipe.name }}">
+												</picture>
+											</div>
+										</div>
+										<div class="card-topics">
+											<ul>
+												<li class="timeT">{{recipe.level}}</li>
+												<li class="productT">{{recipe.product}}</li>
+												<li class="levelT">
+												{% set showTemporality=false %}
+												{% for value in recipe.temporality %}
+
+
+
+													  {% if value|length > 1 and showTemporality == false %}
+														{% set showTemporality = true %}
+														{% if value == 'desayuno' %} Desayuno
+														{% elseif value == 'compartir-con-pareja'%} Compartir con la pareja
+														{% elseif value == 'compartir-con-amigos'%} Compartir con amigos
+														{% elseif value == 'compartir-con-la-familia'%} Compartir con la familia
+														{% elseif value == 'para-los-mas-pequenos'%} Para los más pequeños
+														{% elseif value == 'fiestas-infantiles'%} Fiestas Infantiles
+														{% elseif value == 'ocasion-especiales'%} Ocasiones especiales
+														{% elseif value == 'para-el-calor'%} Para el calor
+														{% elseif value == 'para-el-frio'%} Para el frío
+														{% elseif value == 'san-valentin'%} San Valentín
+														{% elseif value == 'mes-patrio'%} Mes Patrio
+														{% elseif value == 'halloween'%} Halloween
+														{% elseif value == 'navidad'%} Navidad
+
+														{% endif %}
+														{% endif %}
+
+
+
+												{% endfor %}
+
+											--
+
+
+												</li>
+
+											</ul>
+										</div>
+									</div>
+								</a>
+							{% endfor %}
+							{% else %}
+							<p>No encontramos coincidencias con tu búsqueda</p>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

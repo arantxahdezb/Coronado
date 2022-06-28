@@ -1,0 +1,27 @@
+coronado_banners_add:
+  title: 'crear nuevos banners'
+  restrict access: true
+
+coronado_banners_edit:
+  title: 'Editar banners'
+  restrict access: true
+
+coronado_banners_delete:
+  title: 'Eliminar banners'
+  restrict access: true
+
+coronado_banners_view:
+  title: 'Ver los banners'
+  restrict access: true
+
+coronado_about_us:
+  title: 'Configurar Quienes Somos'
+  restrict access: true
+
+coronado_how_we_work:
+  title: 'Configurar Como trabajamos'
+  restrict access: true
+
+coronado_legal:
+  title: 'Configurar Legales'
+  restrict access: true

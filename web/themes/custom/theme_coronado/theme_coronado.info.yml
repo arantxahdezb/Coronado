@@ -1,0 +1,40 @@
+name: theme_coronado
+description: A theme based on Radix.
+screenshot: screenshot.png
+core_version_requirement: ^8.7.7 || ^9.0
+# version: VERSION
+engine: twig
+type: theme
+base theme: radix
+
+
+regions:
+  navbar_branding: Navbar branding
+  navbar_left:  Navbar left
+  navbar_right: Navbar right
+  header: Header
+  breadcrumb: Breadcrumb
+  content: Content
+  hero_slider: Hero slider
+  modal: Modal region
+  footer: Footer
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+
+libraries:
+  - theme_coronado/fullpage
+  - theme_coronado/style
+  - theme_coronado/fonts
+
+ckeditor_stylesheets:
+  - assets/css/theme_coronado.style.css
+
+components:
+  namespaces:
+    theme_coronado: src/components
+
+# Information added by Drupal.org packaging script on 2021-05-10
+version: '5.0.0-alpha1'
+project: 'radix'
+datestamp: 1620632999

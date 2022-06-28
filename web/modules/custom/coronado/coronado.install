@@ -1,0 +1,61 @@
+<?php
+
+
+function coronado_schema()
+{
+  $schema['coronado_home'] = array(
+    'description' => 'The base table for coronado home.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Banner Home ID',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'title' => array(
+        'description' => 'Banner Home Title',
+        'type' => 'varchar',
+        'length' => 100
+      ),
+      'description' => array(
+        'description' => 'Banner Home description',
+        'type' => 'varchar',
+        'length' => 255
+      ),
+      'image_desktop' => array(
+        'description' => 'Banner Home image desktop',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'image_mobile' => array(
+        'description' => 'Banner Home image mobile',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'video_link' => array(
+        'description' => 'Banner Home video link',
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'url' => array(
+        'description' => 'Banner Home url',
+        'type' => 'varchar',
+        'length' => 250,
+      ),
+      'created_at' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      'updated_at' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ]
+    ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}

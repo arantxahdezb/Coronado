@@ -1,0 +1,5 @@
+lett_2buy:
+  version: 1.x
+  header: true
+  js:
+    https://lett.2buycdn.com/embed/v1/plugin.js: { external: true, attributes: { async: true } }

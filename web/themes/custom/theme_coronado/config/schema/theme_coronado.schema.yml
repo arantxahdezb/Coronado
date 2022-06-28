@@ -1,0 +1,5 @@
+# Schema for the configuration files of the theme_coronado theme.
+
+theme_coronado.settings:
+  type: theme_settings
+  label: 'theme_coronado settings'

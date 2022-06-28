@@ -1,0 +1,65 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{#  
+<div class="carosel-div">
+    <div id="slider4" class="carousel slide mb-5" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li class="active" data-target="#slider4" data-slide-to="0"></li>
+        <li data-target="#slider4" data-slide-to="1"></li>
+        <li data-target="#slider4" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+  
+      {% for key,row in rows %}
+          {%
+            set row_classes = [
+              default_row_class ? 'views-row'
+            ]
+          %}
+    
+    
+        {% if key == 0 %}
+          <div class="item active">
+            {% else %}
+          <div class="item">
+        {% endif %}
+            <img class="d-block img-fluid" src="{{file_url(row.content['#row']._entity.field_slider_image.entity.uri.value)}}" alt="First Slide">
+            <div class="carousel-caption d-none d-md-block">
+              <div class="card bg-primary text-white h-100 p-3">
+                <div class="card-body">
+                  {{row.content['#row']._entity.body.value|raw }}
+
+                </div>
+              </div>
+            </div>
+          </div>
+    
+      {% endfor %}
+ 
+      <a href="#slider4" class="carousel-control-prev" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+      </a>
+
+      <a href="#slider4" class="carousel-control-next" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+</div>  #}
+{# ----carousel end div #}

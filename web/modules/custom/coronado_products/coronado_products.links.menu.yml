@@ -1,0 +1,9 @@
+coronado_products.listProduct:
+  title: 'Productos'
+  route_name: coronado_products.listProduct
+  parent: system.admin_content
+
+coronado_products.product_types:
+  title: "Categoría de producto"
+  route_name: coronado_products.listProductType
+  parent: system.admin_content

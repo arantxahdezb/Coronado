@@ -34,7 +34,7 @@ coronado_recipes.home:
   path: "/recetas"
   defaults:
     _controller: '\Drupal\coronado_recipes\Controller\coronado_recipesController::home'
-    _title: "Recetas"
+    _title: "Recipes"
   requirements:
     _permission: 'access content'
 

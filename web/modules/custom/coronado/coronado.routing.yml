@@ -96,7 +96,7 @@ coronado.how_we_work:
   path: "/como-trabajamos"
   defaults:
     _controller: '\Drupal\coronado\Controller\coronadoController::how_we_work'
-    _title: "Cómo trabajamos"
+    _title: "About Us"
   requirements:
     _permission: 'access content'
 
@@ -104,6 +104,6 @@ coronado.notice_of_privacy:
   path: "/aviso-de-privacidad"
   defaults:
     _controller: '\Drupal\coronado\Controller\coronadoController::notice_of_privacy'
-    _title: "Aviso de privacidad"
+    _title: "Privacy Policy"
   requirements:
     _permission: 'access content'

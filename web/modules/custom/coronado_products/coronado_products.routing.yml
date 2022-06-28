@@ -58,7 +58,7 @@ coronado_products.all_products:
   path: "/productos"
   defaults:
     _controller: '\Drupal\coronado_products\Controller\coronado_productsController::all_products'
-    _title: "Productos"
+    _title: "Products"
   requirements:
     _permission: 'access content'
 
